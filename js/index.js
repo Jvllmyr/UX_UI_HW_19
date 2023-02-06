@@ -25,3 +25,27 @@ $(".ccsInfo").on("mouseenter", function() {
 $(".ccsInfo").on("mouseleave", function() {
     $(".ccsDescription").removeClass("active").addClass("hidden");
 })
+
+// Media Query Functions
+const mediaQuery = window.matchMedia('(max-width: 600px)')
+
+function checkMediaQuery(e) {
+  // Check if the media query is true
+  if (e.matches) {
+
+    $(".mmDescription").removeClass("hidden").addClass("active");
+    $(".ccaDescription").removeClass("hidden").addClass("active");
+    $(".ccsDescription").removeClass("hidden").addClass("active");
+  }
+  else {
+    $(".mmDescription").addClass("hidden").removeClass("active");
+    $(".ccsDescription").addClass("hidden").removeClass("active");
+    $(".ccaDescription").addClass("hidden").removeClass("active");
+  }
+}
+
+// Register event listener
+mediaQuery.addListener(checkMediaQuery)
+
+// Initial check
+checkMediaQuery(mediaQuery)

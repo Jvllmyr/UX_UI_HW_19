@@ -304,10 +304,11 @@ li.skillTitle {
 .mmDescription,
 .ccaDescription,
 .ccsDescription {
-    font-weight:100;
+    font-weight: 100;
     position: relative;
     width: 658px;
     z-index: -1;
+    max-height: 412px;
 }
 
 .mmDescription {
@@ -444,6 +445,12 @@ li.skillTitle {
 
 /* hidden */
 .mmDescription.hidden,
+.ccsDescription.hidden,
+.ccaDescription.hidden {
+    opacity: 0;
+}
+
+.mmDescription.hidden,
 .ccsDescription.hidden {
     animation: hideToLeft 0.5s forwards;
 }
@@ -479,28 +486,34 @@ li.skillTitle {
 @keyframes showFromRight {
     0% {
         right: -70%;
+        opacity: 0;
     }
 
     100% {
         right: -20%;
+        opacity: 1;
     }
 }
 
 @keyframes hideToRight {
     0% {
         right: -20%;
+        opacity: 1;
     }
 
     100% {
         right: -70%;
+        opacity: 0;
     }
 }
 
 
+/* Media Query */
 @media only screen and (max-width: 600px) {
     html {
+        all: unset;
         margin: 0 40px;
-        overflow-wrap: break-word;
+        font-family: 'Anek Bangla';
     }
 
     h1 {
@@ -545,6 +558,7 @@ li.skillTitle {
     .heroAboutMe {
         grid-area: heroAboutMe;
         width: 120%;
+        padding-top: 15px;
     }
 
     .aboutMeAndSocials {
@@ -565,6 +579,7 @@ li.skillTitle {
 
     .heroName {
         width: 300px;
+        letter-spacing: 0;
     }
 
     .socialButtons.vertical {
@@ -623,17 +638,19 @@ li.skillTitle {
     .toolsList {
         grid-area: toolsList;
         position: relative;
-        transform: translateX(-50%);
+        transform: translateX(-75%);
         top: 0;
+        border-radius: 300px;
     }
 
     .skillsSection {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
             "skillsSection"
             "skillsList"
         ;
+        transform: translateX(10%);
     }
 
     .hrSeparator {
@@ -643,17 +660,30 @@ li.skillTitle {
 
     /* Projects */
 
-    /* .fullWidth {
+    .projectMM,
+    .projectCCA,
+    .projectCCS {
+        padding: 0;
         margin: 0;
-        padding: 0.25rem;
-        box-shadow: 0 0 0 100vmax #f4f4f4;
-        clip-path: inset(0 -100vmax);
-        padding-top: 100px;
-    } */
+    }
+
+    .projectMM {
+        padding-bottom: 25px;
+    }
+
+    .projectCCA {
+        padding: 25px 0;
+    }
+
+    .projectCCS {
+        padding: 25px;
+    }
 
     .mmInfo,
     .ccaInfo,
     .ccsInfo {
+        all: unset;
+        text-align: center;
         width: 100%;
     }
 
@@ -666,7 +696,7 @@ li.skillTitle {
     .mmInfo {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas:
             "mmTitle"
             "mmDesc"
@@ -707,7 +737,7 @@ li.skillTitle {
     .projectMM {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
         grid-template-areas:
             "mmPart1"
             "mmPart2"
@@ -721,7 +751,7 @@ li.skillTitle {
         text-align: left;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas:
             "ccaTitle"
             "ccaDesc"
@@ -762,11 +792,14 @@ li.skillTitle {
     .projectCCA {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
         grid-template-areas:
             "ccaPart1"
             "ccaPart2"
         ;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 100vmax #ffffff;
+        clip-path: inset(0 -100vmax);
     }
 
 
@@ -775,7 +808,7 @@ li.skillTitle {
     .ccsInfo {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas:
             "ccsTitle"
             "ccsDesc"
@@ -816,11 +849,22 @@ li.skillTitle {
     .projectCCS {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
         grid-template-areas:
             "ccsPart1"
             "ccsPart2"
         ;
+    }
+
+    .mmDescription.active,
+    .ccaDescription.active,
+    .ccsDescription.active {
+        all: unset;
+        text-align: center;
+    }
+
+    .ccaDescription.active {
+        transform: translateX(20%);
     }
 
 
@@ -834,5 +878,7 @@ li.skillTitle {
         width: 250px;
         transform: translateX(-50%);
         margin-bottom: 25px;
+        box-shadow: 30vmax 0 0 0 #cce162;
+        clip-path: inset(0 -100vmax);
     }
 }
