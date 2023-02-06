@@ -304,23 +304,41 @@ li.skillTitle {
 .mmDescription,
 .ccaDescription,
 .ccsDescription {
+    font-weight:100;
     position: relative;
     width: 658px;
     z-index: -1;
 }
 
-.mmDescription,
-.ccsDescription {
+.mmDescription {
     left: -50%;
     background-color: #ffffff;
     border-radius: 0px 230px 230px 0px;
+    padding-top: 10px;
     padding-right: 100px;
     box-shadow: -20vmax 0 0 0 #ffffff;
     clip-path: inset(0 -100vmax);
 }
 
+.ccsDescription {
+    left: -50%;
+    background-color: #ffffff;
+    border-radius: 0px 230px 230px 0px;
+    padding-top: 25px;
+    padding-right: 100px;
+    box-shadow: -20vmax 0 0 0 #ffffff;
+    clip-path: inset(0 -100vmax);
+}
+
+.ccaDescription span {
+    position: relative;
+    display: block;
+    right: 100px;
+    top: 20px;
+}
+
 .ccaDescription {
-    right: -60%;
+    right: -70%;
     background-color: #ffffff;
     border-radius: 230px 0 0 230px;
     padding-right: 100px;
@@ -445,21 +463,21 @@ li.skillTitle {
 
 @keyframes showFromRight {
     0% {
-        right: -60%;
+        right: -70%;
     }
 
     100% {
-        right: -15%;
+        right: -20%;
     }
 }
 
 @keyframes hideToRight {
     0% {
-        right: -15%;
+        right: -20%;
     }
 
     100% {
-        right: -60%;
+        right: -70%;
     }
 }
 
