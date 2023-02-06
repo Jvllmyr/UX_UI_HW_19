@@ -352,7 +352,18 @@ li.skillTitle {
     display: flex;
     flex-direction: column;
     width: 375px;
-    padding-bottom: 100px;
+    height: 200px;
+    margin-bottom: 100px;
+    background-color: #CCE162;
+    border-radius: 230px 0 0 230px;
+    padding-left: 100px;
+    box-shadow: 25vmax 0 0 0 #cce162;
+    clip-path: inset(0 -100vmax);
+}
+
+.contactInfoContent {
+    position: relative;
+    top: 13%;
 }
 
 .contactTitle {
@@ -369,6 +380,10 @@ li.skillTitle {
     position: relative;
     top: 10px;
     zoom: 0.8;
+}
+
+.contactSection {
+    height: 275px;
 }
 
 /* Footer Section */
